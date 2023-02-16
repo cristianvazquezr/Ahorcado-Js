@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <link rel="icon" type="image/x-icon" href="./imagenes/favicon.png">
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Juego del Ahorcado</h1>
+    <input type="button" onclick="ahorcado()" value="Comenzar Juego" />
+    <div>
+        <div class="ahorcado">
+            <div class="ahorcado_imagen">
+                <img id="image" src="" alt="">
+                <label id="palabra"></label>
+            </div>
+            <div>
+                <h2 id="tituloLetras"></h2>
+                <label id="letrasElegidas"></label>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

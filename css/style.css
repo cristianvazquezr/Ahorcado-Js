@@ -1,0 +1,15 @@
+.ahorcado{
+    display: flex;
+    flex-direction: row;
+}
+.ahorcado_imagen{
+    display: flex;
+    flex-direction: column;
+}
+#palabra{
+    margin-left: 40px;
+    font-size: x-large;
+}
+#letrasElegidas{
+    font-size: x-large;
+}
