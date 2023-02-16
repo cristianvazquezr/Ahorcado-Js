@@ -77,13 +77,26 @@ function PalabraGuiones(){
     return palabraIncompleta
 }
 
-
+/*Funcion para actualizar algunos elementos del html */
+function actualizar(){
+    $("#image").load(" #image > *");
+    $("#letraElegidas").load(" #LetraElegidas > *");
+    $("#palabra").load(" #palabra > *");
+}
 
 
 /* comienzo a diseñar el juego, arranco por un mensaje introuctorio*/
 
 
 function ahorcado(){
+    /*inicio el jugo y vuelvo al inicio las imagenes y los textos del html*/
+    document.getElementById("image").src = "./imagenes/ahorcado 0.png";
+    let leElegidas = document.getElementById('letrasElegidas');
+    let palabraUsuario = document.getElementById('palabra');
+    document.getElementById('tituloLetras').innerHTML="";
+    leElegidas.innerHTML = "";
+    palabraUsuario.innerHTML = "";
+
     alert("Hola, esta por comenzar a jugar al ahorcado, tenes 6 vidas. Suerte!!.")
     let gana=false
     let listLetraElegida=[];
@@ -91,18 +104,16 @@ function ahorcado(){
     let palabraArmando=completaPalabra(letraElegida,palabraElegida)[0];
     let coincidencias= completaPalabra(letraElegida,palabraElegida)[1];
     console.log("La palabra elegida tiene " + numeroLetras + " letras.\n" + palabraArmando);
-    /* tomo las variables para levantarlas en el HTML */
-    let leElegidas = document.getElementById('letrasElegidas');
-    leElegidas.innerHTML = listLetraElegida.join(", ");
-    let palabraUsuario = document.getElementById('palabra');
-    palabraUsuario.innerHTML = palabraArmando;
-    document.getElementById('tituloLetras').innerHTML="Letras elegidas"
-    
+      
     while (vidas>0 && gana==false){
         letraElegida=elegirLetra();
         listLetraElegida=listaLetras(letraElegida);
         coincidencias = completaPalabra(letraElegida,palabraElegida)[1];
         palabraArmando = completaPalabra(letraElegida,palabraElegida)[0];
+        /* tomo las variables para levantarlas en el HTML */
+        leElegidas.innerHTML = listLetraElegida.join(", ");
+        palabraUsuario.innerHTML = palabraArmando;
+        document.getElementById('tituloLetras').innerHTML="Letras elegidas"
         if (coincidencias==0){
             vidas=vidas-1
             console.log("la letra elegida tiene " + coincidencias + " coincidencias\nTe quedan " + vidas + " vidas")
@@ -143,6 +154,8 @@ function ahorcado(){
                 break;  
 
         }
-        
+        actualizar()
+
     }
+
 }
