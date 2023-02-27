@@ -78,14 +78,6 @@ function ahorcado(){
         return palabraIncompleta
     }
 
-    /*Funcion para actualizar algunos elementos del html */
-    function actualizar(){
-        $("#image").load(" #image > *");
-        $("#letraElegidas").load(" #LetraElegidas > *");
-        $("#palabra").load(" #palabra > *");
-        continue
-    }
-
 
     /* comienzo a diseñar el juego, arranco por un mensaje introuctorio*/
 
@@ -118,10 +110,10 @@ function ahorcado(){
         document.getElementById('tituloLetras').innerHTML="Letras elegidas"
         if (coincidencias==0){
             vidas=vidas-1
-            console.log("la letra elegida tiene " + coincidencias + " coincidencias\nTe quedan " + vidas + " vidas")
+            console.log("la letra elegida tiene " + coincidencias + " coincidencias\nTe quedan " + vidas + " vidas\nLETRAS ELEGIDAS: [" + listLetraElegida.join(", ")+"]")
         }
         else{
-            console.log("la letra elegida tiene " + coincidencias + " coincidencias\nContinua asi!!")
+            console.log("la letra elegida tiene " + coincidencias + " coincidencias\nContinua asi!!\nLETRAS ELEGIDAS: [" + listLetraElegida.join(", ")+"]")
         }
         palabraUsuario.innerHTML = palabraArmando;
         leElegidas.innerHTML = "[" + listLetraElegida.join(", ")+"]";
@@ -130,6 +122,9 @@ function ahorcado(){
         gana=!palabraArmando.includes("_");
         if(gana){
             console.log("ganaste el juego.\nTe sobraron "+ vidas + " vidas")
+        }
+        if (vidas==0){
+            console.log("PERDISTE!! Te has quedado sin vidas")
         }
 
         switch (vidas){
@@ -154,9 +149,8 @@ function ahorcado(){
             case 0:
                 document.getElementById("image").src = "./imagenes/ahorcado.png";
                 break;  
-
         }
-        actualizar()
+    
     }
 
 }
