@@ -127,6 +127,7 @@ function ahorcado(){
             console.log("PERDISTE!! Te has quedado sin vidas")
         }
 
+        /*creo un switch para que elija de acuerdo a la cantidad de vidas la imagen que debe mostrar */
         switch (vidas){
             case 6:
                 document.getElementById("image").src = "./imagenes/ahorcado 0.png";
