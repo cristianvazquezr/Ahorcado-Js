@@ -35,7 +35,7 @@ function ahorcado(){
             dificultad=parseInt(prompt("ingrese una opción válida"));
         }
         let dificultadPalabra="";
-        if (dificultad==1){
+        if (dificultad===1){
             dificultadPalabra="facil"
         }
         else{
