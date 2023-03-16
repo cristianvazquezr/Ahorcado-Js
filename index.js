@@ -49,10 +49,11 @@ function ahorcado(){
         return listaPalabrasDificultad
     }
 
+   let listaPalabraPorDificultad=palabraDificultad()
     /*Elijo la palabra, genero un indice aleatorio para el areglo*/
 
-    let indice=Math.floor(Math.random()*listaPalabras.length)
-    let palabraElegida=palabraDificultad()[indice]
+    let indice=Math.floor(Math.random()*listaPalabraPorDificultad.length)
+    let palabraElegida=listaPalabraPorDificultad[indice]
     
 
     /* Busco la categoria de la palabra random elegida */
